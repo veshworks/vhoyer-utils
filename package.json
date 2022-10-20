@@ -12,5 +12,8 @@
   "devDependencies": {
     "typescript": "^4.8.4",
     "vite": "^3.1.8"
+  },
+  "dependencies": {
+    "clone": "^2.1.2"
   }
 }
