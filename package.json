@@ -2,16 +2,47 @@
   "name": "@vhoyer/utils",
   "version": "0.0.0",
   "description": "",
-  "main": "index.js",
+  "type": "module",
+  "exports": {
+    "./array": {
+      "types": "./dist/array.d.ts",
+      "import": "./dist/array.mjs",
+      "require": "./dist/array.cjs"
+    },
+    "./coordinates": {
+      "types": "./dist/coordinates.d.ts",
+      "import": "./dist/coordinates.mjs",
+      "require": "./dist/coordinates.cjs"
+    },
+    "./event": {
+      "types": "./dist/event.d.ts",
+      "import": "./dist/event.mjs",
+      "require": "./dist/event.cjs"
+    },
+    "./object": {
+      "types": "./dist/object.d.ts",
+      "import": "./dist/object.mjs",
+      "require": "./dist/object.cjs"
+    },
+    "./task": {
+      "types": "./dist/task.d.ts",
+      "import": "./dist/task.mjs",
+      "require": "./dist/task.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
+    "build": "unbuild",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "typescript": "^4.8.4",
-    "vite": "^3.1.8"
+    "@types/clone": "^2.1.1",
+    "unbuild": "^1.0.1"
   },
   "dependencies": {
     "clone": "^2.1.2"
