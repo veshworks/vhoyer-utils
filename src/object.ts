@@ -49,7 +49,7 @@ export const flat = <T extends { [key: string]: any }>(original: T) => {
 };
 
 // inverse of flat
-export const inflate = (original: { [key: string]: string }) => {
+export const inflate = (original: { [key: string]: any }) => {
   return Object.entries(original)
     .reduce((object, [key, value]) => set(object, key, value), {});
 };

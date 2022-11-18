@@ -35,14 +35,15 @@
   ],
   "scripts": {
     "build": "unbuild",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "vitest"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@types/clone": "^2.1.1",
-    "unbuild": "^1.0.1"
+    "unbuild": "^1.0.1",
+    "vitest": "^0.25.2"
   },
   "dependencies": {
     "clone": "^2.1.2"
