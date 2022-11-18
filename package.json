@@ -1,7 +1,10 @@
 {
   "name": "@vhoyer/utils",
   "version": "0.0.0",
-  "description": "",
+  "description": "Collection of utils I see myself often copying and pasting on every project I work on.",
+  "publishConfig": {
+    "access": "public"
+  },
   "type": "module",
   "exports": {
     "./array": {
@@ -34,14 +37,21 @@
     "dist"
   ],
   "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
     "build": "unbuild",
-    "test": "vitest"
+    "release": "np"
+  },
+  "np": {
+    "yarn": false,
+    "message": ":bookmark: Release v%s"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@types/clone": "^2.1.1",
+    "np": "^7.6.2",
     "unbuild": "^1.0.1",
     "vitest": "^0.25.2"
   },
