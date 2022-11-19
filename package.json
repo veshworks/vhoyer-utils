@@ -27,6 +27,11 @@
       "import": "./dist/object.mjs",
       "require": "./dist/object.cjs"
     },
+    "./string": {
+      "types": "./dist/string.d.ts",
+      "import": "./dist/string.mjs",
+      "require": "./dist/string.cjs"
+    },
     "./task": {
       "types": "./dist/task.d.ts",
       "import": "./dist/task.mjs",

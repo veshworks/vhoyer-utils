@@ -1,4 +1,8 @@
-// https://stackoverflow.com/a/2450976/5379222
+/**
+ * It modifies the original array, shuffling its items.
+ *
+ * https://stackoverflow.com/a/2450976/5379222
+ */
 export const shuffle = (array: any[]) => {
   let currentIndex = array.length, temporaryValue, randomIndex;
 
@@ -16,4 +20,9 @@ export const shuffle = (array: any[]) => {
   }
 
   return array;
+};
+
+/** Get a randomly selected item from the given array. */
+export const randomItemFrom = (array: any[]) => {
+  return array[Math.floor(Math.random() * array.length)];
 };
