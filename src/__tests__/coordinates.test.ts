@@ -123,4 +123,14 @@ describe('Utils > coordinates', () => {
     expect(utils.xyDistanceSquared(xy(0), xy(2))).toEqual(8);
     expect(utils.xyDistanceSquared(xy(0, 0), xy(10, 0))).toEqual(100);
   });
+
+  describe('#xyEval', () => {
+    it('can make simple operations', () => {
+      expect(utils.xyEval`${xy(1)} + ${xy(1)}`).toEqual(xy(2));
+      expect(utils.xyEval`${xy(2)} + ${xy(1)}`).toEqual(xy(3));
+      expect(utils.xyEval`${xy(2)} + ${xy(1)} + ${xy(6)}`).toEqual(xy(9));
+      expect(utils.xyEval`${xy(2)} - ${xy(1)}`).toEqual(xy(1));
+      expect(utils.xyEval`-${xy(2)}`).toEqual(xy(-2));
+    });
+  });
 });

@@ -30,3 +30,39 @@ export const xyApply = (fn: Transform, ...xys: XY[]) => ({ x: fn(...xys.map(p =>
 
 export const xyCentroid = (...xys: XY[]) => xyDivide(xyAdd(...xys), xySame(xys.length));
 export const xyDistanceSquared = ({ x: x1, y: y1 }: XY, { x: x2, y: y2 }: XY) => Math.pow(x1 - x2, 2) + Math.pow(y1 - y2, 2);
+
+export const xyEval = (rawTemplate: TemplateStringsArray, ...items: object[]) => {
+  const template = [...rawTemplate];
+  const stack = [
+    template.shift(),
+    ...(template.map((x, i) => [items[i], x]).flat())
+  ];
+  const cursor = stack.entries();
+  const ast = [];
+
+  for (const [index, item] of cursor) {
+    if (item === '') continue;
+
+
+  }
+
+  return stack;
+
+  const tack = [...items] as XY[];
+  const operations = {
+    '+': [xyAdd, 2],
+    '-': [(a:XY, b:XY) => xyAdd(a, xyNeg(b)), 2],
+  } as { [key: string]: [Function, number] };
+
+  for(let i = 0; i < template.length; ++i) {
+    const op = template[i].trim();
+    if (op === '') continue;
+
+    const [fn, argsCount] = operations[op];
+    const args = stack.splice(0, argsCount);
+    const result = fn(...args);
+    stack.unshift(result);
+  }
+
+  return stack[0];
+};
