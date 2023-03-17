@@ -19,12 +19,17 @@ export const set = (original: { [key: string]: any }, name: string, value: any) 
   return object;
 };
 
-export const get = (object: { [key: string]: any }, name: string) => {
+export const get = <T extends Record<string, any>>(object: T, name: string) => {
   const path = name.split('.');
+  let HEAD = object as any;
 
-  return path.reduce((value, path) => {
-    return (value !== undefined) ? value[path] : undefined;
-  }, object);
+  for (const key of path) {
+    HEAD = HEAD[key];
+
+    if (HEAD === undefined) break;
+  }
+
+  return HEAD as T[keyof T] | undefined;
 };
 
 export const flat = <T extends { [key: string]: any }>(original: T) => {
