@@ -58,3 +58,10 @@ export const inflate = (original: { [key: string]: any }) => {
   return Object.entries(original)
     .reduce((object, [key, value]) => set(object, key, value), {});
 };
+
+export const merge = <T extends object, U extends object>(target: T, source: U) => {
+  return inflate({
+    ...flat(target),
+    ...flat(source),
+  }) as T & U;
+};
