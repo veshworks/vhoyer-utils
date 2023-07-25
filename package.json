@@ -55,6 +55,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "engines": {
+    "node": "^20.0.0"
+  },
   "devDependencies": {
     "@types/clone": "^2.1.1",
     "np": "^8.0.4",
