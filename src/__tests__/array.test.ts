@@ -51,4 +51,15 @@ describe('Utils > String', () => {
       }
     });
   });
+
+  describe('#range', () => {
+    it('creates range appropriately', () => {
+      expect(utils.range({ length: 3 }))
+        .toEqual([0, 0.5, 1]);
+      expect(utils.range({ length: 5, min: 1, max: 2 }))
+        .toEqual([1, 1.25, 1.5, 1.75, 2]);
+      expect(utils.range({ length: 10, min: 10, max: 100 }))
+        .toEqual([10, 20, 30, 40, 50, 60, 70, 80, 90, 100]);
+    });
+  });
 });
