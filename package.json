@@ -57,7 +57,7 @@
   "license": "ISC",
   "devDependencies": {
     "@types/clone": "^2.1.1",
-    "np": "^7.6.2",
+    "np": "^8.0.4",
     "unbuild": "^1.0.1",
     "vitest": "^0.25.2"
   },
