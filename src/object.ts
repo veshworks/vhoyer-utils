@@ -19,8 +19,9 @@ export const set = (original: { [key: string]: any }, name: string, value: any) 
   return object;
 };
 
-export const get = <T extends Record<string, any>>(object: T, name: string) => {
-  const path = name.split('.');
+export const get = <T extends Record<string, any>>(object: T, nameOrPath: (string|string[])) => {
+  const path = Array.isArray(nameOrPath) ? nameOrPath : nameOrPath.split('.');
+
   let HEAD = object as any;
 
   for (const key of path) {

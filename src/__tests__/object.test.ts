@@ -72,6 +72,20 @@ describe('Utils > Object', () => {
 
       expect(utils.get(arranged, 'grand.parent.child')).toEqual('f');
     });
+
+    it('returns a value from a child using array', () => {
+      expect(utils.get({ child: 'f' }, ['child'])).toEqual('f');
+    });
+
+    it('returns a value from a grandchild using array', () => {
+      expect(utils.get({ parent: { child: 'f' } }, ['parent', 'child'])).toEqual('f');
+    });
+
+    it('returns a value from a grand-grandchild using array', () => {
+      const arranged = { grand: { parent: { child: 'f' } } };
+
+      expect(utils.get(arranged, ['grand', 'parent', 'child'])).toEqual('f');
+    });
   });
 
   describe('#flat', () => {
