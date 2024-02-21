@@ -19,6 +19,11 @@ export const set = (original: { [key: string]: any }, name: string, value: any) 
   return object;
 };
 
+/**
+ * @description Get a value from an object using dot notation (e.g. 'a.b.c') or an array of strings
+ * @param object - The object to get the value from
+ * @param nameOrPath - An array of strings or a string with dot notation (e.g. 'a.b.c')
+ */
 export const get = <T extends Record<string, any>>(object: T, nameOrPath: (string|string[])) => {
   const path = Array.isArray(nameOrPath) ? nameOrPath : nameOrPath.split('.');
 
