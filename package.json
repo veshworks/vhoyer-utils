@@ -36,6 +36,36 @@
       "types": "./dist/task.d.ts",
       "import": "./dist/task.mjs",
       "require": "./dist/task.cjs"
+    },
+    "./array": {
+      "types": "./dist/array.d.ts",
+      "import": "./dist/array.mjs",
+      "require": "./dist/array.cjs"
+    },
+    "./coordinates": {
+      "types": "./dist/coordinates.d.ts",
+      "import": "./dist/coordinates.mjs",
+      "require": "./dist/coordinates.cjs"
+    },
+    "./event": {
+      "types": "./dist/event.d.ts",
+      "import": "./dist/event.mjs",
+      "require": "./dist/event.cjs"
+    },
+    "./object": {
+      "types": "./dist/object.d.ts",
+      "import": "./dist/object.mjs",
+      "require": "./dist/object.cjs"
+    },
+    "./string": {
+      "types": "./dist/string.d.ts",
+      "import": "./dist/string.mjs",
+      "require": "./dist/string.cjs"
+    },
+    "./task": {
+      "types": "./dist/task.d.ts",
+      "import": "./dist/task.mjs",
+      "require": "./dist/task.cjs"
     }
   },
   "files": [
