@@ -1,0 +1,27 @@
+version: "3.5"
+
+services:
+  app:
+    tty: true
+    stdin_open: true
+    environment:
+      # environment values to share from host to container
+      - PORT
+    build:
+      args:
+        - NODE_VERSION
+        - GROUPID
+        - USERID
+      dockerfile: ./Dockerfile
+    working_dir: /app
+    user: node
+    command: sh ./docker-compose-startup.sh
+    network_mode: host
+    volumes:
+      - root-home:/root
+      - user-home:/home/node
+      - ./:/app
+
+volumes:
+  root-home:
+  user-home:
