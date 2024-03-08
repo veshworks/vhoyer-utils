@@ -1,6 +1,6 @@
 {
   "name": "@vhoyer/utils",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "Collection of utils I see myself often copying and pasting on every project I work on.",
   "publishConfig": {
     "access": "public"
