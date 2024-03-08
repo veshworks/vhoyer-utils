@@ -20,6 +20,9 @@ services:
     volumes:
       - root-home:/root
       - user-home:/home/node
+      - ~/.gitconfig:/home/node/.gitconfig
+      - ~/.ssh:/home/node/.ssh
+      - ~/.gnupg:/home/node/.gnupg
       - ./:/app
 
 volumes:
